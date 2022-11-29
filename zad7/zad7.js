@@ -1,16 +1,14 @@
 function isHappyNumber(n){
     let seenNumbers = new Set();
-    let sum = 0;
 
     while(true){
         let digits = n.toString().split('');
-        sum = 0;
-        digits.forEach(e => {sum += e*e;});
-        if(sum === 1) return true;
-        if(seenNumbers.has(sum)) return false;
-        seenNumbers.add(sum);
-        n = sum;
+        n = 0;
+        digits.forEach(e => {n += e*e;});
+        if(n === 1) return true;
+        if(seenNumbers.has(n)) return false;
+        seenNumbers.add(n);
     }
 }
 
-console.log(isHappyNumber(19));
+console.log(isHappyNumber(20));
